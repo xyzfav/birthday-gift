@@ -7,12 +7,9 @@
 <style>
 body{
     background:#f8f4ee;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
     margin:0;
     font-family:Georgia, serif;
+    min-height:100vh;
 }
 
 .envelope{
@@ -23,6 +20,7 @@ body{
     cursor:pointer;
     border-radius:8px;
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    margin:200px auto;
 }
 
 .flap{
@@ -76,20 +74,19 @@ body{
         </div>
     </div>
 </div>
-
 <script>
 let opened = false;
 
 function openLetter() {
-    const envelope = document.querySelector(".envelope");
-
     if (!opened) {
-        envelope.classList.add("open");
         opened = true;
 
+        document.querySelector(".envelope").classList.add("open");
+
         setTimeout(() => {
+            document.querySelector(".envelope").style.display = "none";
             document.getElementById("message").style.display = "block";
-        }, 1000);
+        }, 1200);
     }
 }
 </script>
@@ -104,7 +101,7 @@ document.body.addEventListener('click', function () {
 }, { once: true });
 </script>
 
-<div id="message" style="display:none; text-align:center; padding:40px; margin-top:50px;">
+<div id="message" style="display:none; text-align:center; padding:40px; width:100%;">
     <h1>Happy Birthday, My Love ❤️</h1>
     <p>Hi Sayangkuuu Semoga di usia yang baru ini kamu selalu sehat,
 bahagia, dijauhkan dari orang jahat dan didekatkan sama aku si Friska Cantik wkwk. semoga tahun ini dan seterusnya semua impianmu tercapai dan ga ada lagi kegagalan aamiin ya Allah. Terima kasih sudah menjadi bagian yang
