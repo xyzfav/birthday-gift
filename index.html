@@ -53,27 +53,52 @@ body{
     border:2px solid #d7c2a0;
 }
 .hanging-photo{
-    position: relative;
-    margin: 30px auto;
-    width: 280px;
+    position:relative;
+    width:300px;
+    margin:35px auto;
+    animation:swing 4s ease-in-out infinite;
 }
 
 .string{
-    width: 2px;
-    height: 70px;
-    background: #c7a97c;
-    margin: auto;
+    width:2px;
+    height:70px;
+    background:#b89b72;
+    margin:auto;
+}
+
+.clip{
+    text-align:center;
+    font-size:24px;
+    margin-top:-5px;
 }
 
 .polaroid{
-    width: 280px;
-    border: 12px solid #fff;
-    border-bottom: 40px solid #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transform: rotate(-3deg);
-    border-radius: 5px;
+    width:100%;
+    border:12px solid #fff;
+    border-bottom:40px solid #fff;
+    border-radius:6px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    transform:rotate(-3deg);
 }
 
+.sparkle{
+    position:absolute;
+    top:85px;
+    right:-20px;
+    font-size:24px;
+}
+
+@keyframes swing{
+    0%{
+        transform:rotate(-2deg);
+    }
+    50%{
+        transform:rotate(2deg);
+    }
+    100%{
+        transform:rotate(-2deg);
+    }
+}
 .polaroid::before{
     content: "📎";
 }
@@ -178,6 +203,7 @@ sangat berarti dalam hidupku. I really want u to be happy whenever u are🤎</p>
 <div class="hanging-photo">
     <div class="string"></div>
     <img src="Untitled design.PNG" class="polaroid">
+    <div class="sparkle">✨</div>
 </div>
 </body>
 </html>
