@@ -1,10 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Birthday 🤍</title>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body{
+    background:#f8f4ee;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+    font-family:Georgia, serif;
+}
+
+.envelope{
+    width:300px;
+    height:200px;
+    background:#1f355e;
+    position:relative;
+    cursor:pointer;
+    border-radius:8px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-top:100px solid #29467a;
+    transform-origin:top;
+    transition:1s;
+}
+
+.letter{
+    position:absolute;
+    width:260px;
+    height:160px;
+    background:white;
+    left:20px;
+    top:20px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:10px;
+    box-sizing:border-box;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.open .flap{
+    transform:rotateX(180deg);
+}
+
+.open .letter{
+    transform:translateY(-120px);
+}
+</style>
 </head>
+
 <body>
-  <h1> Happy Birthday sayang 🎂
-  <p> Ini hadiah kecil dari Friska Cantik</p>
+
+<div class="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+
+    <div class="letter">
+        <div>
+            <h2>Happy Birthday ❤️</h2>
+            <p>Click again to continue</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function openLetter(){
+    document.querySelector(".envelope")
+    .classList.toggle("open");
+}
+</script>
+
 </body>
 </html>
