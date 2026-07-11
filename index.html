@@ -59,7 +59,7 @@ body{
 }
 
 .open .letter{
-    transform:translateY(-70px);
+    transform:translateY(-120px);
 }
 </style>
 </head>
@@ -88,7 +88,6 @@ function openLetter() {
         opened = true;
 
         setTimeout(() => {
-            envelope.style.display = "none";
             document.getElementById("message").style.display = "block";
         }, 1000);
     }
@@ -105,9 +104,9 @@ document.body.addEventListener('click', function () {
 }, { once: true });
 </script>
 
-<div id="message" style="display:none; text-align:center; padding:40px;">
+<div id="message" style="display:none; text-align:center; padding:40px; margin-top:50px;">
     <h1>Happy Birthday, My Love ❤️</h1>
-    <p>Selamat ulang tahun, sayang. Semoga di usia yang baru ini kamu selalu sehat,
+    <p>Hi Sayangkuuu Semoga di usia yang baru ini kamu selalu sehat,
 bahagia, dijauhkan dari orang jahat dan didekatkan sama aku si Friska Cantik wkwk. semoga tahun ini dan seterusnya semua impianmu tercapai dan ga ada lagi kegagalan aamiin ya Allah. Terima kasih sudah menjadi bagian yang
 sangat berarti dalam hidupku. I really want u to be happy whenever u are❤️</p>
 </div>
