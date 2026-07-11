@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet"><head>
 <meta charset="UTF-8">
-<title>For You ❤️</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet"><title>For You ❤️</title>
 <style>
 body{
    background:#efe4cf;
@@ -16,35 +15,37 @@ body{
 }
 
 .envelope{
-    width:300px;
-    height:200px;
+    width:85vw;
+    max-width:420px;
+    height:55vw;
     background:#2d4373;
     position:relative;
     cursor:pointer;
-    border-radius:8px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    margin:200px auto;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    margin:100px auto;
 }
 
 .flap{
     position:absolute;
     width:0;
     height:0;
-    border-left:150px solid transparent;
-    border-right:150px solid transparent;
-    border-top:100px solid #29467a;
+    border-left:42.5vw solid transparent;
+    border-right:42.5vw solid transparent;
+    border-top:28vw solid #29467a;
+    max-width:210px;
     transform-origin:top;
     transition:1s;
 }
 
 .letter{
     position:absolute;
-    width:260px;
-    height:140px;
-    background:#f5e6c8;
-    border-radius:20px;
-    left:20px;
-    top:30px;
+    width:75%;
+    height:70%;
+    background:#f7eedb;
+    border-radius:25px;
+    left:12.5%;
+    top:15%;
     transition:1s;
     display:flex;
     justify-content:center;
@@ -153,6 +154,31 @@ body{
     border-radius:40px 20px 35px 25px;
     z-index:-1;
     transform:rotate(2deg);
+}
+h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:38px;
+    letter-spacing:1px;
+    color:#3f3325;
+}
+
+h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:55px;
+    color:#4b3b2b;
+}
+
+#message p{
+    font-family:'Quicksand', sans-serif;
+    font-size:20px;
+    line-height:1.9;
+    color:#5e4c3c;
+}
+
+.letter p{
+    font-family:'Quicksand', sans-serif;
+    font-size:18px;
+    color:#7c6a56;
 }
 </style>
 </head>
