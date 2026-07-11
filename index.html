@@ -52,7 +52,31 @@ body{
     text-align:center;
     border:2px solid #d7c2a0;
 }
+.hanging-photo{
+    position: relative;
+    margin: 30px auto;
+    width: 280px;
+}
 
+.string{
+    width: 2px;
+    height: 70px;
+    background: #c7a97c;
+    margin: auto;
+}
+
+.polaroid{
+    width: 280px;
+    border: 12px solid #fff;
+    border-bottom: 40px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: rotate(-3deg);
+    border-radius: 5px;
+}
+
+.polaroid::before{
+    content: "📎";
+}
 .open .flap{
     transform:rotateX(180deg);
 }
@@ -149,6 +173,11 @@ document.body.addEventListener('click', function () {
     <p>Hi Sayangkuuu Semoga di usia yang baru ini kamu selalu sehat,
 bahagia, dijauhkan dari orang jahat dan didekatkan sama aku si Friska Cantik wkwk. semoga tahun ini dan seterusnya semua impianmu tercapai dan ga ada lagi kegagalan aamiin ya Allah. Terima kasih sudah menjadi bagian yang
 sangat berarti dalam hidupku. I really want u to be happy whenever u are🤎</p>
+</div>
+
+<div class="hanging-photo">
+    <div class="string"></div>
+    <img src="fotopolaroid.png" class="polaroid">
 </div>
 </body>
 </html>
