@@ -98,6 +98,20 @@ body{
     100%{
         transform:rotate(-2deg);
     }
+.flower {
+    position: fixed;
+    top: -20px;
+    font-size: 25px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+   }
 }
 .polaroid::before{
     content: "📎";
@@ -158,12 +172,43 @@ function openLetter() {
     if (!opened) {
         opened = true;
 
-        document.querySelector(".envelope").classList.add("open");
+        document.querySelector(".envelope")
+            .classList.add("open");
+
+        createFlowers();
 
         setTimeout(() => {
             document.querySelector(".envelope").remove();
             document.getElementById("message").style.display = "block";
         }, 1200);
+    }
+}
+
+function createFlowers() {
+    const items = ["🌸","✨","🤍","💐"];
+
+    for (let i = 0; i < 30; i++) {
+        const flower = document.createElement("div");
+
+        flower.classList.add("flower");
+
+        flower.innerHTML =
+            items[Math.floor(Math.random() * items.length)];
+
+        flower.style.left =
+            Math.random() * 100 + "vw";
+
+        flower.style.animationDuration =
+            (Math.random() * 3 + 3) + "s";
+
+        flower.style.fontSize =
+            (Math.random() * 20 + 20) + "px";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 6000);
     }
 }
 </script>
