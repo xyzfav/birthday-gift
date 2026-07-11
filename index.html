@@ -78,22 +78,21 @@ body{
 </div>
 
 <script>
-et opened = false;
+let opened = false;
 
-function openLetter(){
+function openLetter() {
     const envelope = document.querySelector(".envelope");
 
-    if(!opened){
+    if (!opened) {
         envelope.classList.add("open");
         opened = true;
 
         setTimeout(() => {
             envelope.style.display = "none";
             document.getElementById("message").style.display = "block";
-        }, 1200);
+        }, 1000);
     }
 }
-
 </script>
 
 <audio id="music" loop>
@@ -106,22 +105,11 @@ document.body.addEventListener('click', function () {
 }, { once: true });
 </script>
 
-<div id="message" style="
-display:none;
-max-width:700px;
-margin:auto;
-padding:40px;
-text-align:center;
-font-family:Georgia, serif;
-">
-
-<h1>Happy Birthday, My Love ❤️</h1>
-
-<p>
-Selamat ulang tahun, sayang. Semoga di usia yang baru ini kamu selalu sehat,
+<div id="message" style="display:none; text-align:center; padding:40px;">
+    <h1>Happy Birthday, My Love ❤️</h1>
+    <p>Selamat ulang tahun, sayang. Semoga di usia yang baru ini kamu selalu sehat,
 bahagia, dijauhkan dari orang jahat dan didekatkan sama aku si Friska Cantik wkwk. semoga tahun ini dan seterusnya semua impianmu tercapai dan ga ada lagi kegagalan aamiin ya Allah. Terima kasih sudah menjadi bagian yang
-sangat berarti dalam hidupku. I really want u to be happy whenever u are❤️
-</p>
-
-</div></body>
+sangat berarti dalam hidupku. I really want u to be happy whenever u are❤️</p>
+</div>
+</body>
 </html>
