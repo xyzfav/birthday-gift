@@ -59,6 +59,30 @@ body{
 .open .letter{
     transform:translateY(-120px);
 }
+#message{
+    display:none;
+    max-width:700px;
+    margin:80px auto;
+    padding:40px;
+    background:#fff8e7;
+    border:3px solid #d8c3a5;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    background-image:
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size:100% 35px;
+    text-align:center;
+    position:relative;
+}
+
+#message::before{
+    content:"💌";
+    font-size:35px;
+    position:absolute;
+    top:-20px;
+    left:50%;
+    transform:translateX(-50%);
+}
 </style>
 </head>
 
