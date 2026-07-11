@@ -100,9 +100,9 @@ body{
     }
 .flower{
     position: fixed;
-    top: -20px;
-    font-size: 25px;
-    animation: fall linear forwards;
+    top: -50px;
+    font-size: 30px;
+    animation: fall 5s linear forwards;
     pointer-events: none;
     z-index: 9999;
 }
@@ -135,11 +135,10 @@ body{
     padding:50px;
     background:#f7ecd7;
     border:2px solid #d7c2a0;
-    border-radius:35px 15px 30px 20px;
-    box-shadow:0 10px 15px rgba(0,0,0,0.2);
+    border-radius:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
     text-align:center;
     position:relative;
-    transform:rotate(-1deg);
 }
 
 #message::before{
@@ -176,9 +175,7 @@ function openLetter() {
     if (!opened) {
         opened = true;
 
-        document.querySelector(".envelope")
-            .classList.add("open");
-
+      document.querySelector(".envelope").classList.add("open");
         createFlowers();
 
         setTimeout(() => {
