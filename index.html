@@ -98,7 +98,7 @@ body{
     100%{
         transform:rotate(-2deg);
     }
-.flower {
+.flower{
     position: fixed;
     top: -20px;
     font-size: 25px;
@@ -108,10 +108,14 @@ body{
 }
 
 @keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-   }
+  from {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 .polaroid::before{
     content: "📎";
@@ -197,7 +201,8 @@ function createFlowers() {
 
         flower.style.left =
             Math.random() * 100 + "vw";
-
+        flower.style.top = "-50px";
+        flower.style.position = "fixed";
         flower.style.animationDuration =
             (Math.random() * 3 + 3) + "s";
 
