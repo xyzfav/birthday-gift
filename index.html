@@ -180,7 +180,7 @@ h1{
   color:#5e4c3c;
   font-size:18px;
   font-style:italic;
-  font-family:'Cormorant', serif;
+  font-family:'Cormorant Garamond', serif;
   letter-spacing:0.5px;
 }
 
@@ -291,14 +291,16 @@ function openLetter(){
 
   document.getElementById("music").play();
 
-  setTimeout(()=>{
+  setTimeout(() => {
     document.getElementById("message").style.display = "block";
-typeLetter();
+    typeLetter();
+  }, 2500);
 
-  setTimeout(()=>{
+  setTimeout(() => {
     document.querySelector(".envelope").remove();
-  },3000);
+  }, 3000);
 }
+
 const text = `Hi Sayangkuuu...
 
 Semoga di usia yang baru ini kamu selalu sehat,
@@ -314,15 +316,20 @@ function typeLetter(){
   let i = 0;
   const target = document.getElementById("letterText");
 
+  target.innerHTML = "";
+
   function typing(){
     if(i < text.length){
-      target.innerHTML += text.charAt(i);
+      if(text.charAt(i) === "\n"){
+        target.innerHTML += "<br>";
+      } else {
+        target.innerHTML += text.charAt(i);
+      }
       i++;
       setTimeout(typing, 40);
     }
   }
 
-  target.innerHTML = "";
   typing();
 }
 
@@ -333,7 +340,6 @@ function createFlowers(){
     const flower = document.createElement("div");
 
     flower.className = "flower";
-
     flower.innerHTML =
       items[Math.floor(Math.random()*items.length)];
 
@@ -348,9 +354,9 @@ function createFlowers(){
 
     document.body.appendChild(flower);
 
-    setTimeout(()=>{
+    setTimeout(() => {
       flower.remove();
-    },6000);
+    }, 6000);
   }
 }
 </script>
