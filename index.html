@@ -243,10 +243,26 @@ h1{
   font-style:italic;  
   font-size:18px;  
 }  
+
+#countdown{
+  position:fixed;
+  inset:0;
+  background:#dbe4f0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:90px;
+  color:#27437d;
+  font-family:'Cormorant Garamond', serif;
+  z-index:99999;
+}
+
 </style>  
 </head>  
   
-<body>  
+<body>
+
+<div id="countdown">3</div>  
   
 <div class="envelope" onclick="openLetter()">  
   <div class="flap"></div>  
@@ -359,27 +375,7 @@ function createFlowers(){
     }, 6000);  
   }  
 }  
-
-let count = 3;
-const countdown = document.getElementById("countdown");
-
-const timer = setInterval(() => {
-  count--;
-
-  if(count > 0){
-    countdown.innerHTML = count;
-  } else {
-    countdown.innerHTML = "💌";
-
-    setTimeout(() => {
-      countdown.style.display = "none";
-      document.querySelector(".envelope").style.display = "block";
-    }, 1000);
-
-    clearInterval(timer);
-  }
-}, 1000);
 </script>  
   
 </body>  
-</html>  
+</html>
