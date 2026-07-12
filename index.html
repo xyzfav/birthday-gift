@@ -237,6 +237,12 @@ h1{
     font-size:17px;
   }
 }
+.birthday-date{
+  margin-top:-20px;
+  color:#9c8768;
+  font-style:italic;
+  font-size:18px;
+}
 </style>
 </head>
 
@@ -258,21 +264,9 @@ h1{
 <div id="message">
   <h1>Happy Birthday, My Love 🤎</h1>
 
-  <p>
-    Hi Sayangkuuu...<br><br>
+  <p class="birthday-date">12 July 2026 ✨</p>
 
-    Semoga di usia yang baru ini kamu selalu sehat,
-    bahagia, dijauhkan dari orang jahat dan didekatkan
-    sama orang-orang yang baik.
-
-    Semoga tahun ini dan seterusnya semua impianmu tercapai
-    dan ga ada lagi kegagalan, aamiin ya Allah.
-
-    Terima kasih sudah menjadi bagian yang sangat berarti
-    dalam hidupku.
-
-    I really want u to be happy wherever u are 🤎
-  </p>
+<p id="letterText"></p>
 
   <div class="hanging-photo">
     <div class="string"></div>
@@ -299,11 +293,37 @@ function openLetter(){
 
   setTimeout(()=>{
     document.getElementById("message").style.display = "block";
-  },2500);
+typeLetter();
 
   setTimeout(()=>{
     document.querySelector(".envelope").remove();
   },3000);
+}
+const text = `Hi Sayangkuuu...
+
+Semoga di usia yang baru ini kamu selalu sehat,
+bahagia, dijauhkan dari orang jahat dan didekatkan sama orang-orang yang baik.
+
+Semoga tahun ini dan seterusnya semua impianmu tercapai dan ga ada lagi kegagalan, aamiin ya Allah.
+
+Terima kasih sudah menjadi bagian yang sangat berarti dalam hidupku.
+
+I really want u to be happy wherever u are 🤎`;
+
+function typeLetter(){
+  let i = 0;
+  const target = document.getElementById("letterText");
+
+  function typing(){
+    if(i < text.length){
+      target.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 40);
+    }
+  }
+
+  target.innerHTML = "";
+  typing();
 }
 
 function createFlowers(){
