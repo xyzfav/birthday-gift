@@ -210,6 +210,7 @@ h1{
   height:auto;
   display:block;
   margin:0 auto;
+}
 
 #countdown{
   position:fixed;
@@ -361,6 +362,7 @@ const timer = setInterval(() => {
     setTimeout(() => {
       countdown.style.display = "none";
       document.querySelector(".envelope").style.visibility = "visible";
+    }, 2000);
 
     clearInterval(timer);
   }
