@@ -18,24 +18,23 @@ body{
   font-family:'Quicksand',sans-serif;  
 }  
   
-.envelope{ 
-  display:none;
-  width:85vw;  
-  height:420px; 
-  height:280px; 
-  background:linear-gradient(  
-      145deg,  
-      #3f5fa3 0%,  
-      #27437d 45%,  
-      #1e3363 100%  
-  );  
-  border-radius:20px;  
-  box-shadow:0 15px 30px rgba(0,0,0,.15);  
-  margin:15vh auto;  
-  position:relative;  
-  overflow:hidden;  
-  cursor:pointer;  
-}  
+.envelope{
+  width:85vw;
+  max-width:420px;
+  height:320px;
+  margin:18vh auto;
+  background:linear-gradient(
+      145deg,
+      #3f5fa3,
+      #27437d,
+      #1e3363
+  );
+  border-radius:28px;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
   
 .envelope::before{  
   content:"✦";  
