@@ -18,7 +18,8 @@ body{
   font-family:'Quicksand',sans-serif;  
 }  
   
-.envelope{  
+.envelope{ 
+  display:none;
   width:92vw;  
   height:65vh;  
   max-width:500px;  
@@ -374,7 +375,28 @@ function createFlowers(){
       flower.remove();  
     }, 6000);  
   }  
-}  
+}
+let count = 3;
+const countdown = document.getElementById("countdown");
+
+document.querySelector(".envelope").style.display = "none";
+
+const timer = setInterval(() => {
+  count--;
+
+  if (count > 0) {
+    countdown.innerHTML = count;
+  } else {
+    countdown.innerHTML = "💌";
+
+    setTimeout(() => {
+      countdown.style.display = "none";
+      document.querySelector(".envelope").style.display = "block";
+    }, 1000);
+
+    clearInterval(timer);
+  }
+}, 1000);
 </script>  
   
 </body>  
