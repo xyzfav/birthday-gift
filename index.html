@@ -348,7 +348,7 @@ function createFlowers(){
 let count = 4;
 const countdown = document.getElementById("countdown");
 
-document.querySelector(".envelope").style.display = "none";
+document.querySelector(".envelope").style.visibility = "hidden";
 
 const timer = setInterval(() => {
   count--;
@@ -360,8 +360,7 @@ const timer = setInterval(() => {
 
     setTimeout(() => {
       countdown.style.display = "none";
-      document.querySelector(".envelope").style.display = "block";
-    }, 2000);
+      document.querySelector(".envelope").style.visibility = "visible";
 
     clearInterval(timer);
   }
