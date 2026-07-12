@@ -1,185 +1,166 @@
 <!DOCTYPE html>
 <html>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet"><head>
+<head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet"><title>For You ❤️</title>
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
 body{
-   background:#efe4cf;
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4) 2px, transparent 2px),
-        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.3) 2px, transparent 2px);
-    margin:0;
-    font-family:Georgia, serif;
-    min-height:100vh;
+  margin:0;
+  min-height:100vh;
+  background:#efe4cf;
+  background-image:
+  radial-gradient(circle at 20% 20%, rgba(255,255,255,.4) 2px, transparent 2px),
+  radial-gradient(circle at 80% 70%, rgba(255,255,255,.3) 2px, transparent 2px);
+  overflow-x:hidden;
+  font-family:'Quicksand',sans-serif;
 }
 
 .envelope{
-    width:85vw;
-    max-width:420px;
-    height:55vw;
-    background:#2d4373;
-    position:relative;
-    cursor:pointer;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.2);
-    margin:100px auto;
+  width:90vw;
+  max-width:430px;
+  height:280px;
+  background:linear-gradient(145deg,#324c85,#25396b);
+  border-radius:30px;
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.25),
+    inset 0 2px 10px rgba(255,255,255,.08);
+  margin:120px auto;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
 }
 
 .flap{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:50%;
-    background:#29467a;
-    clip-path:polygon(0 0, 100% 0, 50% 100%);
-    transform-origin:top;
-    transition:1s;
-    border-radius:20px 20px 0 0;
+  position:absolute;
+  width:100%;
+  height:55%;
+  background:#2c4478;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  top:0;
+  left:0;
+  transform-origin:top;
+  transition:1s;
+  z-index:3;
+}
+
+.seal{
+  position:absolute;
+  width:75px;
+  height:75px;
+  background:#b86b5f;
+  border-radius:50%;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  z-index:4;
 }
 
 .letter{
-    position:absolute;
-    width:75%;
-    height:70%;
-    background:#f7eedb;
-    border-radius:25px;
-    left:12.5%;
-    top:15%;
-    transition:1s;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    border:2px solid #d7c2a0;
-}
-.hanging-photo{
-    position:relative;
-    width:300px;
-    margin:35px auto;
-    animation:swing 4s ease-in-out infinite;
+  position:absolute;
+  width:80%;
+  height:75%;
+  background:#f8f1e3;
+  border-radius:30px;
+  left:10%;
+  top:12%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  border:2px solid #d7c2a0;
+  transition:1.2s;
 }
 
-.string{
-    width:2px;
-    height:70px;
-    background:#b89b72;
-    margin:auto;
-}
-
-.clip{
-    text-align:center;
-    font-size:24px;
-    margin-top:-5px;
-}
-
-.polaroid{
-    width:100%;
-    border:12px solid #fff;
-    border-bottom:40px solid #fff;
-    border-radius:6px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    transform:rotate(-3deg);
-}
-
-.sparkle{
-    position:absolute;
-    top:85px;
-    right:-20px;
-    font-size:24px;
-}
-
-@keyframes swing{
-    0%{
-        transform:rotate(-2deg);
-    }
-    50%{
-        transform:rotate(2deg);
-    }
-    100%{
-        transform:rotate(-2deg);
-    }
-}
-.flower{
-    position: fixed;
-    top: -50px;
-    font-size: 30px;
-    animation: fall 5s linear forwards;
-    pointer-events: none;
-    z-index: 9999;
-}
-
-@keyframes fall {
-  from {
-    transform: translateY(-50px) rotate(0deg);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(120vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-.polaroid::before{
-    content: "📎";
-}
 .open .flap{
-    transform:rotateX(180deg);
+  transform:rotateX(180deg);
 }
 
 .open .letter{
-    transform:translateY(-120px);
-    transition:1.5s ease;
-}
-#message{
-    display:none;
-    max-width:700px;
-    margin:120px auto;
-    padding:50px;
-    background:#f7ecd7;
-    border:2px solid #d7c2a0;
-    border-radius:35px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    text-align:center;
-    position:relative;
+  transform:translateY(-180px);
 }
 
-#message::before{
-    content:"";
-    position:absolute;
-    top:-15px;
-    left:-15px;
-    width:100%;
-    height:100%;
-    border:2px solid rgba(160,130,90,0.3);
-    border-radius:40px 20px 35px 25px;
-    z-index:-1;
-    transform:rotate(2deg);
-}
-h2{
-    font-family:'Cormorant Garamond', serif;
-    font-size:38px;
-    letter-spacing:1px;
-    color:#3f3325;
-}
-
-h1{
-    font-family:'Cormorant Garamond', serif;
-    font-size:55px;
-    color:#4b3b2b;
-}
-
-#message p{
-    font-family:'Quicksand', sans-serif;
-    font-size:20px;
-    line-height:1.9;
-    color:#5e4c3c;
+.letter h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;
+  color:#443322;
+  margin-bottom:10px;
 }
 
 .letter p{
-    font-family:'Quicksand', sans-serif;
-    font-size:18px;
-    color:#7c6a56;
+  color:#8b7761;
+}
+
+#message{
+  display:none;
+  max-width:800px;
+  margin:60px auto;
+  padding:40px 30px;
+  background:#f7ecd7;
+  border-radius:35px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  text-align:center;
+}
+
+h1{
+  font-family:'Cormorant Garamond',serif;
+  color:#4b3b2b;
+  font-size:52px;
+}
+
+#message p{
+  line-height:1.9;
+  color:#5e4c3c;
+  font-size:18px;
+}
+.hanging-photo{
+  width:260px;
+  margin:40px auto;
+}
+
+.string{
+  width:2px;
+  height:70px;
+  background:#b89b72;
+  margin:auto;
+}
+
+.polaroid{
+  width:100%;
+  border:12px solid white;
+  border-bottom:40px solid white;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  transform:rotate(-3deg);
+}
+
+.sparkle{
+  position:absolute;
+  font-size:28px;
+}
+   
+.flower{
+  position:fixed;
+  top:-50px;
+  pointer-events:none;
+  z-index:9999;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  from{
+    transform:translateY(-50px) rotate(0);
+    opacity:1;
+  }
+  to{
+    transform:translateY(120vh) rotate(360deg);
+    opacity:0;
+  }
 }
 </style>
 </head>
@@ -187,74 +168,19 @@ h1{
 <body>
 
 <div class="envelope" onclick="openLetter()">
-    <div class="flap">✼</div>
-   <div class="seal">❀</div>
-    <div class="letter">
-        <div>
-            <h2>Happy Birthday ❤️</h2>
-            <p>Open your letter </p>
-        </div>
+  <div class="flap"></div>
+  <div class="seal">🤎</div>
+
+  <div class="letter">
+    <div>
+      <h2>Happy Birthday ❤️</h2>
+      <p>Open your letter ✨</p>
     </div>
+  </div>
 </div>
-<script>
-let opened = false;
 
-function openLetter() {
-    if (!opened) {
-        opened = true;
-
-      document.querySelector(".envelope").classList.add("open");
-        createFlowers();
-
-        setTimeout(() => {
-            document.querySelector(".envelope").remove();
-            document.getElementById("message").style.display = "block";
-        }, 1200);
-    }
-}
-
-function createFlowers() {
-    const items = ["🌼","✨","🤍","🍁"];
-
-    for (let i = 0; i < 30; i++) {
-        const flower = document.createElement("div");
-
-        flower.classList.add("flower");
-
-        flower.innerHTML =
-            items[Math.floor(Math.random() * items.length)];
-
-        flower.style.left =
-            Math.random() * 100 + "vw";
-        flower.style.top = "-50px";
-        flower.style.position = "fixed";
-        flower.style.animationDuration =
-            (Math.random() * 3 + 3) + "s";
-
-        flower.style.fontSize =
-            (Math.random() * 20 + 20) + "px";
-
-        document.body.appendChild(flower);
-
-        setTimeout(() => {
-            flower.remove();
-        }, 6000);
-    }
-}
-</script>
-
-<audio id="music" loop>
-  <source src="Backstreet Boys - Shape Of My Heart (Official HD Video).mp3" type="audio/mpeg">
-</audio>
-
-<script>
-document.body.addEventListener('click', function () {
-  document.getElementById('music').play();
-}, { once: true });
-</script>
-
-<div id="message" style="display:none;">
-  <h1>Happy Birthday, My Love</h1>
+<div id="message">
+  <h1>Happy Birthday, My Love 🤎</h1>
 
   <p>
     Hi Sayangkuuu Semoga di usia yang baru ini kamu selalu sehat,
@@ -265,10 +191,64 @@ document.body.addEventListener('click', function () {
   </p>
 
   <div class="hanging-photo">
-      <div class="string"></div>
-      <img src="Untitled design.PNG" class="polaroid">
-      <div class="sparkle">✨</div>
+    <div class="string"></div>
+    <img src="Untitled design.PNG" class="polaroid">
   </div>
 </div>
+
+<audio id="music" loop>
+  <source src="Backstreet Boys - Shape Of My Heart (Official HD Video).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let opened = false;
+
+function openLetter(){
+  if(opened) return;
+
+  opened = true;
+
+  document.querySelector(".envelope").classList.add("open");
+  createFlowers();
+
+  document.getElementById("music").play();
+
+  setTimeout(()=>{
+    document.getElementById("message").style.display = "block";
+  },2500);
+
+  setTimeout(()=>{
+    document.querySelector(".envelope").remove();
+  },3000);
+}
+
+function createFlowers(){
+  const items = ["🌸","✨","🤍","🍁","🌼","🤎"];
+
+  for(let i=0;i<35;i++){
+    const flower = document.createElement("div");
+    flower.className = "flower";
+
+    flower.innerHTML =
+      items[Math.floor(Math.random()*items.length)];
+
+    flower.style.left =
+      Math.random()*100 + "vw";
+
+    flower.style.fontSize =
+      (Math.random()*20 + 20) + "px";
+
+    flower.style.animationDuration =
+      (Math.random()*3 + 3) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(()=>{
+      flower.remove();
+    },6000);
+  }
+}
+</script>
+
 </body>
 </html>
