@@ -454,9 +454,15 @@ function createFlowers(){
 setTimeout(() => {
   alert(`A little surprise for you🖤
 Tap anywhere to continue✨`);
-
-  document.getElementById("music").play();
 }, 500);
+
+document.addEventListener(
+  "click",
+  function () {
+    document.getElementById("music").play();
+  },
+  { once: true }
+);
 
 const scrapbook = [
   "1.jpg",
