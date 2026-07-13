@@ -289,29 +289,37 @@ h1{
   font-size:22px;
   margin:10px;
 }
-.cloud{
+.star,.moon{
   position:fixed;
-  color:rgba(255,255,255,0.55);
-  font-size:70px;
   z-index:-1;
+  opacity:.5;
 }
 
-.cloud1{
-  top:100px;
-  left:30px;
+.star1{
+  top:120px;
+  right:70px;
+  font-size:30px;
 }
 
-.cloud2{
-  bottom:130px;
-  right:30px;
+.star2{
+  bottom:200px;
+  left:80px;
+  font-size:25px;
+}
+
+.moon{
+  top:180px;
+  left:60px;
+  font-size:45px;
 }
 </style>  
 </head>  
   
 <body>
 
-<div class="cloud cloud1">☁️</div>
-<div class="cloud cloud2">☁️</div>
+<div class="star star1">✨</div>
+<div class="star star2">⭐</div>
+<div class="moon">🌙</div>
 
 <div id="countdown">3</div>  
   
