@@ -381,7 +381,6 @@ h1{
 #scratchCard{
   position:relative;
   width:100%;
-  height:350px;
   border-radius:25px;
   overflow:hidden;
   margin-bottom:15px;
@@ -394,6 +393,7 @@ h1{
   padding:30px;
   box-sizing:border-box;
   text-align:center;
+  width:100;
 }
 
 #scratchCanvas{
@@ -693,11 +693,23 @@ function initScratch(){
 
   const ctx = canvas.getContext("2d");
 
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+const message =
+  document.querySelector(".final-message");
 
-  ctx.fillStyle = "#f2e4c8";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+canvas.width = message.offsetWidth;
+canvas.height = message.offsetHeight;
+
+canvas.style.width =
+  message.offsetWidth + "px";
+
+canvas.style.height =
+  message.offsetHeight + "px";
+
+document.getElementById("scratchCard").style.height =
+  message.offsetHeight + "px";
+
+ctx.fillStyle = "#f2e4c8";
+ctx.fillRect(0,0,canvas.width,canvas.height);
 
   ctx.fillStyle = "#8b7761";
   ctx.font = "30px serif";
