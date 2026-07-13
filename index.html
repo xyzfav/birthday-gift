@@ -287,25 +287,25 @@ h1{
 <script>  
 let opened = false;  
   
-function openLetter(){  
-  if(opened) return;  
-  
-  opened = true;  
-  
-  document.querySelector(".envelope").classList.add("open");  
-  createFlowers();  
-  
-  document.getElementById("music").play();  
-  
-  setTimeout(() => {  
-    document.getElementById("message").style.display = "block";  
-    typeLetter();  
-  }, 2500);  
-  
-  setTimeout(() => {  
-    document.querySelector(".envelope").remove();  
-  }, 3000);  
-}  
+function openLetter(){
+  if(opened) return;
+
+  opened = true;
+
+  document.querySelector(".envelope").classList.add("open");
+
+  document.getElementById("music").play();
+
+  setTimeout(() => {
+    document.getElementById("message").style.display = "block";
+    typeLetter();
+    createFlowers();
+  }, 2500);
+
+  setTimeout(() => {
+    document.querySelector(".envelope").remove();
+  }, 3000);
+}
   
 const text = `Hi Sayangkuuu...  
   
@@ -377,12 +377,11 @@ const timer = setInterval(() => {
     countdown.innerHTML = count;
   } else {
     countdown.innerHTML = "💌";
-  }
 
     setTimeout(() => {
-  document.getElementById("message").style.display = "block";
-  typeLetter();
-}, 2500);
+  countdown.style.display = "none";
+  document.querySelector(".envelope").style.visibility = "visible";
+}, 2000);
 
     clearInterval(timer);
   }
