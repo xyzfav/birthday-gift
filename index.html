@@ -289,11 +289,69 @@ h1{
   font-size:22px;
   margin:10px;
 }
+.cloud{
+  position:fixed;
+  background:rgba(255,255,255,0.45);
+  border-radius:50px;
+  z-index:-1;
+}
 
+.cloud::before,
+.cloud::after{
+  content:"";
+  position:absolute;
+  background:rgba(255,255,255,0.45);
+  border-radius:50%;
+}
+
+.cloud1{
+  width:120px;
+  height:45px;
+  top:120px;
+  left:30px;
+}
+
+.cloud1::before{
+  width:50px;
+  height:50px;
+  top:-20px;
+  left:15px;
+}
+
+.cloud1::after{
+  width:60px;
+  height:60px;
+  top:-25px;
+  right:15px;
+}
+
+.cloud2{
+  width:150px;
+  height:55px;
+  bottom:120px;
+  right:40px;
+}
+
+.cloud2::before{
+  width:60px;
+  height:60px;
+  top:-25px;
+  left:20px;
+}
+
+.cloud2::after{
+  width:70px;
+  height:70px;
+  top:-30px;
+  right:20px;
+}
 </style>  
 </head>  
   
 <body>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
 
 <div id="countdown">3</div>  
   
