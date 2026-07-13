@@ -372,35 +372,34 @@ Terima kasih sudah menjadi bagian yang sangat berarti dalam hidupku.
   
 I really want u to be happy wherever u are 🤎`;  
   
-function typeLetter(){  
-  let i = 0;  
-  const target = document.getElementById("letterText");  
-  
-  target.innerHTML = "";  
-  
-  function typing(){  
-    if(i < text.length){  
-      if(text.charAt(i) === "\n"){  
-        target.innerHTML += "<br>";  
-      } else {  
-        target.innerHTML += text.charAt(i);  
-      }  
-      i++;  
-      setTimeout(typing, 40);  
-    } 
-    else {
-     const btn = document.getElementById("openAlbumBtn");
+function typeLetter(){
+  let i = 0;
+  const target = document.getElementById("letterText");
 
-     btn.style.display = "inline-block";
+  target.innerHTML = "";
 
-     setTimeout(() => {
-     btn.style.opacity = "1";
-    }, 100);
+  function typing(){
+    if(i < text.length){
+      if(text.charAt(i) === "\n"){
+        target.innerHTML += "<br>";
+      } else {
+        target.innerHTML += text.charAt(i);
+      }
+      i++;
+      setTimeout(typing, 40);
+    } else {
+      const btn = document.getElementById("openAlbumBtn");
+
+      btn.style.display = "inline-block";
+
+      setTimeout(() => {
+        btn.style.opacity = "1";
+      }, 100);
+    }
   }
+
+  typing();
 }
-  
-typing();  
-}  
   
 function createFlowers(){  
   const items = ["🌸","✨","🤍","🍁","🌼","🤎"];  
