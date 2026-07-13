@@ -527,7 +527,11 @@ const scrapbook = [
 
 let currentPage = 0;
 
-function nextPage(){
+function showAlbum(){
+  document.getElementById("album").style.display = "block";
+}
+
+  function nextPage(){
   if(currentPage < scrapbook.length - 1){
     currentPage++;
     document.getElementById("scrapbookImage").src =
