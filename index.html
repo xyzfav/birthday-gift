@@ -403,6 +403,7 @@ h1{
   width:100%;
   height:100%;
   touch-action:none;
+  cursor:pointer;
 }
  .ending-stars{
   position:absolute;
@@ -484,6 +485,7 @@ h1{
 <div id="endingPage">
   <div class="ending-stars">
   <span style="top:12%;left:15%;">✨</span>
+ </div>
 <div class="ending-box">
 
 <div id="scratchCard">
@@ -739,20 +741,19 @@ function scratch(e){
     scratch
   );
 
-  canvas.addEventListener(
-    "touchstart",
-    ()=>drawing=true
-  );
+ canvas.addEventListener("touchstart", (e)=>{
+  drawing = true;
+  scratch(e);
+});
 
-  canvas.addEventListener(
-    "touchend",
-    ()=>drawing=false
-  );
+canvas.addEventListener("touchend", ()=>{
+  drawing = false;
+});
 
-  canvas.addEventListener(
-    "touchmove",
-    scratch
-  );
+canvas.addEventListener("touchmove", (e)=>{
+  e.preventDefault();
+  scratch(e);
+}, { passive:false });
 }
 </script>  
 
