@@ -353,7 +353,6 @@ function openLetter(){
     typeLetter();
     createFlowers();
   }, 2500);
-  document.getElementById("openAlbumBtn").style.display = "inline-block";
   
   setTimeout(() => {
     document.querySelector(".envelope").remove();
@@ -386,10 +385,16 @@ function typeLetter(){
       }  
       i++;  
       setTimeout(typing, 40);  
-    }  
+    } else { 
+    document.getElementById("openAlbumBtn").style.display = "inline-block";
+    } 
+      setTimeout(() => {
+      btn.style.opacity = "1";
+    }, 100);
   }  
+}
   
-  typing();  
+typing();  
 }  
   
 function createFlowers(){  
