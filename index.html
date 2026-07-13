@@ -348,8 +348,6 @@ function openLetter(){
 
   document.querySelector(".envelope").classList.add("open");
 
-  document.getElementById("music").play();
-
   setTimeout(() => {
     document.getElementById("message").style.display = "block";
     typeLetter();
@@ -430,6 +428,8 @@ function createFlowers(){
 setTimeout(() => {
   alert(`A little surprise for you🖤
 Tap anywhere to continue✨`);
+
+  document.getElementById("music").play();
 }, 500);
 
 const scrapbook = [
