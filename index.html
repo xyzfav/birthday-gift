@@ -126,19 +126,19 @@ body{
 }
 
 .letter div{
-  margin-top:90px;
+  margin-top:150px;
 }
 
 .letter h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:42px;
+  font-size:70px;
   color:#443322;
   margin-bottom:10px;
 }
 
 .letter p{
   color:#8b7761;
-  font-size:20px;
+  font-size:10px;
 }
 
 .open .flap{
@@ -379,9 +379,10 @@ const timer = setInterval(() => {
     countdown.innerHTML = "💌";
 
     setTimeout(() => {
-      countdown.style.display = "none";
-      document.querySelector(".envelope").style.visibility = "visible";
-    }, 2000);
+  document.getElementById("message").style.display = "block";
+  typeLetter();
+  createFlowers();
+}, 2500);
 
     clearInterval(timer);
   }
