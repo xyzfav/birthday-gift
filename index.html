@@ -373,7 +373,7 @@ function openLetter(){
   opened = true;
 
   document.querySelector(".envelope").classList.add("open");
-
+  document.getElementById("music").play();
   setTimeout(() => {
     document.getElementById("message").style.display = "block";
     typeLetter();
@@ -455,14 +455,6 @@ setTimeout(() => {
   alert(`A little surprise for you🖤
 Tap anywhere to continue✨`);
 }, 500);
-
-document.addEventListener(
-  "click",
-  function () {
-    document.getElementById("music").play();
-  },
-  { once: true }
-);
 
 const scrapbook = [
   "1.jpg",
