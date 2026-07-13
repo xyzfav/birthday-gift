@@ -312,6 +312,46 @@ h1{
   left:60px;
   font-size:45px;
 }
+#endingPage{
+  display:none;
+  min-height:100vh;
+  background:#dbe4f0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+.ending-box{
+  background:#faf4e8;
+  padding:50px 30px;
+  border-radius:35px;
+  text-align:center;
+  max-width:650px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.ending-box h1{
+  color:#4b3b2b;
+  margin-bottom:30px;
+}
+
+.ending-box p{
+  color:#5e4c3c;
+  line-height:2;
+  font-size:20px;
+}
+
+.ending-box button{
+  margin-top:35px;
+  padding:15px 30px;
+  border:none;
+  border-radius:50px;
+  background:#3f5fa3;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
 </style>  
 </head>  
   
@@ -358,8 +398,27 @@ h1{
     <div class="string"></div>  
     <img src="Untitled design.PNG" class="polaroid">  
   </div>  
+</div>
+<div id="endingPage">
+  <div class="ending-box">
+    <h1>🤎 The End 🤎</h1>
+
+    <p>
+      Thank you for opening my little world.<br><br>
+
+      I hope this little surprise made you smile today.<br><br>
+
+      Happy Birthday, My Love.<br>
+      May all your wishes come true ✨<br><br>
+
+      — With love, always 🤎
+    </p>
+
+    <button onclick="location.reload()">
+      💌 Replay Again
+    </button>
+  </div>
 </div>  
-  
 <audio id="music" loop>  
   <source src="0713.MP3" type="audio/mpeg">  
 </audio>  
@@ -469,15 +528,14 @@ const scrapbook = [
 
 let currentPage = 0;
 
-function showAlbum(){
-  document.getElementById("album").style.display = "block";
-}
-
 function nextPage(){
   if(currentPage < scrapbook.length - 1){
     currentPage++;
     document.getElementById("scrapbookImage").src =
       scrapbook[currentPage];
+  } else {
+    document.getElementById("message").style.display = "none";
+    document.getElementById("endingPage").style.display = "flex";
   }
 }
 
